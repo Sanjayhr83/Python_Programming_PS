@@ -89,7 +89,7 @@
 # l=eval(input("Enter a list: "))
 # print(palindrome(l))
 
-# # 8. WAP to common elements from the two list
+# # 8. WAP to print common elements from the two list
 # def common_val(l1,l2):
 #     out=[]
 #     for i in l1:

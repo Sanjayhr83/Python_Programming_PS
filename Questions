@@ -1,0 +1,13 @@
+1.find the largest element in the given list
+2.remove the duplication value from the list
+3. print the second-largest element in the given list
+4.To merge two list without using "+" operator
+5.to find the sum of integers present in a given list
+6.to reverse the list using two pointer(means take i,j)
+7.to check weather the list is palindrome or not using two pointer(means take i,j)
+8.to print common elements from the two list
+9.to find frequency of the elements from the list
+10.to rotate the list for n number of times to right or left l=list,n=number of list
+11.to move zero to end of the list
+12.to find missing number from list(1 to n)
+13.to find the pair with given sum
