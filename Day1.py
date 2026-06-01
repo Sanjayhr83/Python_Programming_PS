@@ -282,7 +282,7 @@ def sorted(l):
 l = eval(input("Enter a list: "))
 print(sorted(l))
 
-# 9. wap  to find non repeated element in the list
+# 9. wap  to find non-repeated element in the list
 def repeated(l):
     out = []
     for i in l:
