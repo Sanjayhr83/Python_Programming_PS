@@ -1,4 +1,4 @@
-# DAY-1 LIST PROGRAM
+# DAY-1 LIST PROGRAMS
 # 1.find the largest element in the given list
 def largest_val(l):
     l=list(set(l))
@@ -189,3 +189,119 @@ def sum(l,n):
 l=eval(input("enter the list : "))
 n=int(input("enter the n value : "))
 print(sum(l,n))
+
+"""-----------------LIST PROGRAMS----------------------------"""
+# 1. wap to find first repeating elements
+def firstrepeating(l):
+    seen = []
+    for i in l:
+        if i in seen:
+            return i
+        else:
+            seen.append(i)
+    return "not found"
+l = eval(input("Enter a list: "))
+print(firstrepeating(l))
+
+# 2. sap to find the index of given element withput using index()
+def index(l,target):
+    pos = 0
+    for i in l:
+        if i == target:
+            return pos
+        pos = pos + 1
+    return "not found"
+l = eval(input("Enter a list: "))
+target = eval(input("Enter a target: "))
+print(index(l,target))
+
+# 3. wap to count the occurrence of given element in the given list
+def element(l,x):
+    count = 0
+    for i in l:
+        if i == x:
+            count = count + 1
+    return count
+l = eval(input("Enter a list: "))
+x = eval(input("Enter a target: "))
+print(element(l,x))
+
+# 4.wap to get following o/p
+# i/p = ['python.py','pro1.html','data.db','google.com']
+# o/p = ['py','html','db','com']
+def extensions(l):
+    e1=[]
+    for i in l:
+        parts = i.split(".")
+        e1.append(parts[-1])
+    return e1
+l = eval(input("Enter a list: "))
+print(extensions(l))
+
+# 5. wap to extract all the interger which are multiple of 5 and has three digit in it from list
+def extract(l):
+    e1 = []
+    for num in l:
+        if num % 5 ==0 and abs(num)>=100 and abs(num)<=999:
+            e1.append(num)
+    return e1
+l = eval(input("Enter a list: "))
+print(extract(l))
+
+# 6. wap to split list into even and odd list
+def seperate(l):
+    even = []
+    odd = []
+    for i in l:
+        if i % 2 == 0:
+            even.append(i)
+        else:
+            odd.append(i)
+    return even,odd
+l = eval(input("Enter a list: "))
+even,odd =seperate(l)
+print(even)
+print(odd)
+
+# 7. wap to find duplicate element from the list
+def duplicate(l):
+    out = []
+    for i in l:
+        if i not in l:
+            out.append(i)
+    return out
+l = eval(input("Enter a list: "))
+print(duplicate(l))
+
+# 8. wap to check whether list is sorted or not
+def sorted(l):
+    for i in range(len(l)-1):
+        if l[i]>l[i+1]:
+            return "not sorted"
+    return "sorted"
+l = eval(input("Enter a list: "))
+print(sorted(l))
+
+# 9. wap  to find non repeated element in the list
+def repeated(l):
+    out = []
+    for i in l:
+        if l.count(i)==1:
+            out.append(i)
+    return out
+l = eval(input("Enter a list: "))
+print(repeated(l))
+
+# 10. wap to find the element which is repeated more number of times
+def mostrepeated(l):
+    max_count = 0
+    max_element = None
+    for i in l:
+        count = l.count(i)
+        if count>max_count:
+            max_count = count
+            max_element = i
+    return max_element,max_count
+l = eval(input("Enter a list: "))
+element , freq = mostrepeated(l)
+print(element,freq)

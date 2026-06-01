@@ -1,3 +1,4 @@
+-----------------LIST PROGRAMS----------------------------
 1.find the largest element in the given list
 2.remove the duplication value from the list
 3. print the second-largest element in the given list
@@ -11,3 +12,12 @@
 11.to move zero to end of the list
 12.to find missing number from list(1 to n)
 13.to find the pair with given sum
+            ASSIGNMENT 10 QUESTION
+
+-----------------STRING PROGRAMS----------------------------
+1.to reverse the string using two pointer
+2.To check the string palindrome or not using two pointer
+3.to the count of vowels and consonants in a given string
+4.to occurrence of element in given string
+5.To occurrence of sub-string by the given string
+6.to remove the space's from the given string
