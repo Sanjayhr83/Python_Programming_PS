@@ -108,3 +108,73 @@ def large_palindrome(s):
     return large
 s=input("Enter a string: ")
 print(large_palindrome(s))
+
+#To find the duplicate characters from given string
+def duplicate_char(s):
+    dup=''
+    res=''
+    for i in s:
+        if i in res:
+            dup=dup+i
+        else:
+            res=res+i
+    return dup
+s=input("Enter a string : ")
+print(duplicate_char(s))
+
+#To find the largest word from the given string
+def large_word(s):
+    word=s.split()
+    large=''
+    for i in word:
+        if len(i)>len(large):
+            large=i
+    return large
+s=input("Enter a string: ")
+print(large_word(s))
+
+#To check the string is anagram or not
+"""(anagram : if the both strings are having same characters in any order is called anagram.)"""
+def anagram(s1,s2):
+    if sorted(s1)==sorted(s2):
+        return "The strings are anagrams"
+    else:
+        return "The strings are not anagrams"
+s1=input("Enter a string: ").lower().replace(" ","")
+s2=input("Enter another string: ").lower().replace(" ","")
+print(anagram(s1,s2))
+
+#To check the string is pangram or not
+"""A pangram (Greek for "every letter") is a sentence or string of text that contains every single letter of the alphabet at least once."""
+def pagram(s):
+    import string
+    str_set=set(s)
+    alpha=set(string.ascii_lowercase)
+    if alpha.issubset(str_set):
+        return "The strings are anagrams"
+    else:
+        return "The strings are not anagrams"
+s=input("Enter a string: ").lower()
+print(pagram(s))
+
+#To find non-repeating character from string
+def non_repeat(s):
+    for i in range(len(s)):
+        c=0
+        for j in range(len(s)):
+            if s[i]==s[j]:
+                c=c+1
+        if c==1:
+            return s[i]
+s=input("Enter a string: ")
+print(non_repeat(s))
+            #or
+def first_non_repeat(s):
+    for char in s:
+        # Check if the character appears exactly once in the string
+        if s.count(char) == 1:
+            return char
+    return "No unique characters found"
+
+s = input("Enter a character: ")
+print(first_non_repeat(s))
