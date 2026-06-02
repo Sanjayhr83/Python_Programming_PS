@@ -74,3 +74,37 @@ def remove_space(s):
     return res
 s=input("Enter a string: ")
 print(remove_space(s))
+
+#to rotate the string
+def rotation_str(s1,s2):
+    if len(s1) == len(s2) and s2 in (s1+s1):
+        print("rotation of string")
+    else:
+        print("no a rotation of string")
+s1=input("enter first string : ")
+s2=input("enter second string : ")
+rotation_str(s1,s2)
+
+#to insert the sub-string into the main string from the given index number
+def add_substr(s,sub,ind):
+    if ind<0 or ind>len(s):
+        return "invalid index"
+    else:
+        new_s = s[:ind] + sub + s[ind:]
+        return new_s
+s=input("enter main string : ")
+sub=input("enter sub string : ")
+ind=int(input("enter index : "))
+print(add_substr(s,sub,ind))
+
+#to print largest palindrome sub-string for the given string
+def large_palindrome(s):
+    large=""
+    for i in range(len(s)):
+        for j in range(i+1,len(s)+1):
+            sub=s[i:j]
+            if sub==sub[::-1] and len(sub)>len(large):
+                large=sub
+    return large
+s=input("Enter a string: ")
+print(large_palindrome(s))
