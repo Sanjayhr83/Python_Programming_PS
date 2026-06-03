@@ -37,7 +37,7 @@ def count_char(s):
     for i in s:
         if i in "AEIOUaeiou":
             vowel=vowel+1
-        elif "A"<=i<="Z" or "a"<=i<="z":
+        elif "A"<=i<="Z" or "a"<=i<="z": #it is indicated character in A-to-Z
             consonant=consonant+1
     return f"the string contains vowels {vowel} and the consonants {consonant}"
 s=input("enter the string : ")
@@ -178,3 +178,121 @@ def first_non_repeat(s):
 
 s = input("Enter a character: ")
 print(first_non_repeat(s))
+
+"""--------------------------ASSIGNMENT------------------------------"""
+# 1. wap to convert lowercase char to uppercase char without using upper()
+def convertion(s):
+    res = ""
+    for ch in s:
+        if 'a'<=ch<='z': #it is indicated character in A-to-Z
+            res +=chr(ord(ch)-32)
+        else:
+            res += ch
+    return res
+s = input('enter a string: ')
+print(convertion(s))
+
+# 2. wap to find frequency of each char from given str
+def freq(s):
+    char = {}
+    for i in s:
+        if i in char:
+            char[i] += 1
+        else:
+            char[i] = 1
+    return char
+s = input('enter a string: ')
+print(freq(s))
+
+# 3. wap to remove duplicate char from given str
+def duplicate(s):
+    res = ''
+    for i in s:
+        if i in res:
+            pass
+        else:
+            res += i
+    return res
+s = input('enter a string: ')
+print(duplicate(s))
+
+# 4. wap to reverse each word from given str
+def reverse_str(s):
+    words = s.split()
+    result = []
+    for i in words:
+        result.append(i[::-1])
+    return " ".join(result)
+s = input('enter a string: ')
+print(reverse_str(s))
+
+# 5. wap to reverse the order of str
+def reverse_word(s):
+    words = s.split()
+    reverse_words = reversed(words)
+    return " ".join(reverse_words)
+s = input('enter a string: ')
+print(reverse_word(s))
+
+# 6. wap to store each word into list from the given str without using the split()
+def store_words(s):
+    words = []
+    word = ""
+    for ch in s:
+        if ch != " ":
+            word += ch
+        else:
+            if word:
+                words.append(word)
+                word = ""
+    if word:
+        words.append(word)
+    return words
+s = input('enter a string: ')
+print(store_words(s))
+
+# 7.wap to count upper,lowercase,digit,special symbol,spaces and word from given string
+def count_sym(s):
+    upper = lower = digit = symbol = space = 0
+    for ch in s:
+        if ch.isupper():
+            upper += 1
+        elif ch.islower():
+            lower += 1
+        elif ch.isdigit():
+            digit += 1
+        elif ch.isspace():
+            symbol += 1
+        else:
+            symbol += 1
+    word = space+1 if s.strip() else 0
+    print("uppercase :", upper)
+    print("lowercase :", lower)
+    print("digits :", digit)
+    print("symbols :", symbol)
+    print("spaces :", space)
+    print("words :", word)
+s = input('enter a string: ')
+print(count_sym(s))
+
+# 8.wap to print second word from the given str
+def second_word(s):
+    words = s.split()
+    if len(words) >=2:
+        return words[1]
+    else:
+        return "no word found"
+s = input("enter a string: ")
+print(second_word(s))
+
+# 9.wap to get the following o/p
+# i/p = 'python is fun'
+# o/p = {'python':6 'is':2 'fun':3}
+def word_length_dict(s):
+    result = {}
+    words = s.split()
+    for w in words:
+        result[w] = len(w)
+    return result
+s = input("enter a string: ")
+print(word_length_dict(s))
