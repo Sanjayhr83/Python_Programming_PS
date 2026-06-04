@@ -121,6 +121,9 @@ def perfect_num(n):
 n=int(input("enter the number : "))
 print(perfect_num(n))
 
+
+"""--------------------ASSIGNMENT 7 QUESTION----------------------"""
+
 #to find factorial of given number
 """-------using for loop------"""
 def find_factorial(n):
