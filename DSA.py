@@ -50,6 +50,7 @@ implement in two ways
 1.using python list
 2.using in-built module
 """
+#using python list
 class stack:
     def __init__(self,size=5):
         self.size=size
@@ -81,7 +82,7 @@ s.push(70)
 print(s.display())
 # s.push(7) #error because stack is full
 
-"""Built-in modules"""
+#using in-built module
 from collections import deque
 st=deque()
 st.append(1)
@@ -107,6 +108,7 @@ print(st[-1])
 Implement in two ways
 1.using python list
 2.using in-built module"""
+#using python list
 class Queue:
     def __init__(self,size=5):
         self.size=size
@@ -134,3 +136,27 @@ q.push(50)
 q.pop()
 print(q.peek()) #20
 print(q.display()) #[20, 30, 40, 50]
+
+#2.Using in-built method
+from collections import deque
+q=deque()
+q.append(1)
+q.append(2)
+q.append(3)
+q.append(4)
+q.append(5)
+print(q) #deque([1, 2, 3, 4, 5])
+q.popleft()
+print(q) #deque([2, 3, 4, 5])
+print(q[0]) #2
+ex:2
+from collections import deque
+q=deque(maxlen=5)
+q.append(10)
+q.append(20)
+q.append(30)
+q.append(40)
+print(q) #deque([10, 20, 30, 40], maxlen=5)
+q.pop()
+print(q) #deque([10, 20, 30], maxlen=5)
+print(q[-1]) #30
