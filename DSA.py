@@ -162,6 +162,7 @@ print(q) #deque([10, 20, 30], maxlen=5)
 print(q[-1]) #30
 
 """Single Linked List"""
+"""------Creation Single Linked List------"""
 class snode:
     def __init__(self,data):
         self.data=data
