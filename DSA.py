@@ -160,3 +160,28 @@ print(q) #deque([10, 20, 30, 40], maxlen=5)
 q.pop()
 print(q) #deque([10, 20, 30], maxlen=5)
 print(q[-1]) #30
+
+"""Single Linked List"""
+class snode:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+    def get_data(self):
+        return self.data
+    def set_data(self,new):
+        self.data=new
+    def get_next(self):
+        return self.next
+    def set_next(self,new):
+        self.next=new
+n1=snode(10)
+n2=snode(20)
+n3=snode(30)
+n4=snode(40)
+n1.set_next(n2)
+n2.set_next(n3)
+n3.set_next(n4)
+ptr=n1
+while ptr!= None:
+    print(ptr.get_data()) #10,\n20,\n30,\n40
+    ptr=ptr.get_next()
