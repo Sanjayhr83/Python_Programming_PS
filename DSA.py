@@ -1,49 +1,81 @@
 """-------Searching Algorithms for DSA(linear search,binary search,ternary search)--------"""
-# def without_temp(n1, n2):
-# #Linear Search (Time Complexity:O(n) , Space Complexity:O(1))
-# """
-# Time complexity measures how the runtime of an algorithm grows relative to the size of the input
-# ($n$, which is the number of elements in your collection col).
-#  total_time = n XO(1)=O(n)
-#
-# Space complexity measures the amount of extra memory/space an algorithm allocation requires relative to the input size.
-# Because the extra memory requirement is constant and independent of $n$, the Space Complexity is $O(1)$.
-# """
-# def linear_search(col,key):
-#     for i in range(len(col)):
-#         if col[i] == key:
-#             return i
-#     return -1
-# col=eval(input("enter your col : "))
-# key=int(input("enter your key : "))
-# print(linear_search(col,key))
-#
-# #Binary Search (Time Complexity (TC): O(log n)  Space Complexity (SC): O(1) )
-# def binary_search(col,key):
-#     low=0
-#     high=len(col)-1
-#     while low<=high:
-#         mid=(low+high)//2
-#         if col[mid]==key:
-#             return mid
-#         elif col[mid]<key:
-#             low=mid+1
-#         else:
-#             low=mid-1
-# col=eval(input("enter your collection : "))
-# key=int(input("enter your key : "))
-# print(binary_search(col,key))
-#
-# """----------Sorting Algorithms for DSA(bubble sort,selection sort,insertion sort,quick sort,merge sort)--------"""
-# """1.Bubble sort Algorithm (Time Complexity : O(n^2) and Space Complexity : O(1))"""
-# def bubble_sort(arr):
-#     for passnum in range(1,len(arr)):
-#         for i in range(0,len(arr)-passnum):
-#             if arr[i] > arr[i+1]:
-#                 arr[i],arr[i+1] = arr[i+1],arr[i]
-#     return arr
-# arr=eval(input("enter array : "))
-# print(bubble_sort(arr))
+#Linear Search (Time Complexity:O(n) , Space Complexity:O(1))
+"""
+Time complexity measures how the runtime of an algorithm grows relative to the size of the input
+($n$, which is the number of elements in your collection col).
+ total_time = n XO(1)=O(n)
+
+Space complexity measures the amount of extra memory/space an algorithm allocation requires relative to the input size.
+Because the extra memory requirement is constant and independent of $n$, the Space Complexity is $O(1)$.
+"""
+def linear_search(col,key):
+    for i in range(len(col)):
+        if col[i] == key:
+            return i
+    return -1
+col=eval(input("enter your col : "))
+key=int(input("enter your key : "))
+print(linear_search(col,key))
+
+#Binary Search (Time Complexity (TC): O(log n)  Space Complexity (SC): O(1) )
+def binary_search(col,key):
+    low=0
+    high=len(col)-1
+    while low<=high:
+        mid=(low+high)//2
+        if col[mid]==key:
+            return mid
+        elif col[mid]<key:
+            low=mid+1
+        else:
+            low=mid-1
+col=eval(input("enter your collection : "))
+key=int(input("enter your key : "))
+print(binary_search(col,key))
+
+"""----------Sorting Algorithms for DSA(bubble sort,selection sort,insertion sort,quick sort,merge sort)--------"""
+"""1.Bubble sort Algorithm (Time Complexity : O(n^2) and Space Complexity : O(1))"""
+def bubble_sort(arr):
+    for passnum in range(1,len(arr)):
+        for i in range(0,len(arr)-passnum):
+            if arr[i] > arr[i+1]:
+                arr[i],arr[i+1] = arr[i+1],arr[i]
+    return arr
+arr=eval(input("enter array : "))
+print(bubble_sort(arr))
+
+"""2.Merge Sort"""
+def mergeSort(l):
+    if len(l)>1:
+        left=l[:len(l)//2]
+        right=l[len(l)//2:]
+        mergeSort(left)
+        mergeSort(right)
+        i=0
+        j=0
+        k=0
+        while i<len(left) and j<len(right):
+            if left[i]<right[j]:
+                l[k]=left[i]
+                i+=1
+                k+=1
+            else:
+                l[k]=right[j]
+                j+=1
+                k+=1
+        while i<len(left):
+            l[k]=left[i]
+            i+=1
+            k+=1
+        while j<len(right):
+            l[k]=right[j]
+            j+=1
+            k+=1
+    return l
+# l=eval(input("Enter the values: "))
+l=[2,1,4,5,3,7,8,9,6]
+mergeSort(l)
+print(l)
 
 """Stack-FILO(first in last out) / LIFO(last in first out)
 implement in two ways
