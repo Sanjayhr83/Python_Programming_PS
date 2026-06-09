@@ -218,3 +218,58 @@ ptr=n1
 while ptr!= None:
     print(ptr.get_data()) #10,\n20,\n30,\n40
     ptr=ptr.get_next()
+
+"""Singly Linked List"""
+class Snode:
+    def __init__(self, data):
+        self.data = data
+        self.next = None  # Holds the reference to the next node
+    def get_data(self):
+        return self.data
+    def set_data(self, new):
+        self.data = new
+    # FIX 1: Added missing getter for next node
+    def get_next(self):
+        return self.next
+    # FIX 2: Added missing setter for next node
+    def set_next(self, new_next):
+        self.next = new_next
+
+class SLL:
+    def __init__(self):
+        self.head = None
+    def create_node(self, data):
+        node = Snode(data)
+        return node
+    def add_first(self, data):
+        node = self.create_node(data)
+        # FIX 3: Simplified logic works whether head is None or not
+        node.set_next(self.head)
+        self.head = node
+    def get_last_node(self):
+        ptr = self.head
+        # This will now work perfectly since get_next() exists
+        while ptr.get_next() is not None:
+            ptr = ptr.get_next()
+        return ptr
+    def add_last(self, data):
+        node = self.create_node(data)
+        if self.head is None:
+            self.head = node
+        else:
+            last = self.get_last_node()
+            last.set_next(node)
+    # Helper method to print the list and verify it works!
+    def display(self):
+        ptr = self.head
+        elements = []
+        while ptr is not None:
+            elements.append(str(ptr.get_data()))
+            ptr = ptr.get_next()
+        print(" -> ".join(elements) + " -> None")
+# Testing the implementation
+s = SLL()
+s.add_first(10)  # List: 10 -> None
+s.add_last(20)  # List: 10 -> 20 -> None
+s.add_first(20)  # List: 30 -> 10 -> 20 -> None
+s.display()
