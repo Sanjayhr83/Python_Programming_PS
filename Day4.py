@@ -64,3 +64,28 @@ def remove_duplicates(l):
 print(remove_duplicates(d)) #{'a': 10, 'b': 20, 'c': 30, 'e': 40}
 
 #to access nested dictionary from the given dictionary
+user_profile = {
+    "username": "coder_joy",
+    "status": "active",
+    "personal_info": {
+        "name": "Joy",
+        "age": 24,
+        "location": {
+            "city": "New York",
+            "country": "USA"
+        }
+    },
+    "socials": {
+        "twitter": "@joy_codes",
+        "github": "joy-git"
+    }
+}
+# Accessing the first nested layer
+social_dict = user_profile["socials"]
+print(social_dict) # {'twitter': '@joy_codes', 'github': 'joy-git'}
+# Accessing the GitHub username inside 'socials'
+github_handle = user_profile["socials"]["github"]
+print(github_handle) # joy-git
+# Reaching into 'personal_info', then 'location', then 'city'
+user_city = user_profile["personal_info"]["location"]["city"]
+print(user_city) #New York
