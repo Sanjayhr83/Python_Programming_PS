@@ -26,3 +26,41 @@ out={}
 for i in key:
     out[i]=d[i]
 print(out) #{'age': 21, 'course': 'PFS', 'duration': 6, 'name': 'jss'}
+
+#sort the value in dictionary  by value
+d=eval(input("Enter the dictionary : ")) #{"a":13,"b":12,"c":76,"d":8,"e":46,"q":2,"f":3,"h":100,"i":33}
+items=list(d.items()) #converting dict to list [('a', 13), ('b', 12), ('c', 76), ('d', 8), ('e', 46), ('q', 2), ('f', 3), ('h', 100), ('i', 33)]
+for passno in range(1,len(items)):
+    for i in range(len(items)-passno):
+        if items[i][1]>items[i+1][1]:
+            items[i],items[i+1]=items[i+1],items[i]
+out={}
+for k,v in items: #k=key v=value
+    out[k]=v
+print(out) #{'q': 2, 'f': 3, 'd': 8, 'b': 12, 'a': 13, 'i': 33, 'e': 46, 'c': 76, 'h': 100}
+
+#to find maximum value in the dictionary
+d=eval(input("Enter a dictionary: ")) #{"a":10,"b":38,"c":78,"d":87,"e":198,"q":23,"o":86}
+def maximum(d):
+    key=list(d.keys())[0]
+    max_v=d[key]
+    for k,v in d.items():
+        if v>max_v:
+            max_v=v
+            key=k
+    return (key,max_v)
+print(maximum(d))  #('e', 198)
+
+#to remove duplicate value from the dictionary
+d=eval(input("Enter a dictionary: ")) #{"a": 10, "b": 20, "c": 30, "d": 10, "e": 40}
+def remove_duplicates(l):
+    out={}
+    res=set()
+    for k,v in d.items():
+        if v not in res:
+            out[k]=v
+            res.add(v)
+    return out
+print(remove_duplicates(d)) #{'a': 10, 'b': 20, 'c': 30, 'e': 40}
+
+#to access nested dictionary from the given dictionary
