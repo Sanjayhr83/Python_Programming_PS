@@ -305,3 +305,14 @@ def mostrepeated(l):
 l = eval(input("Enter a list: "))
 element , freq = mostrepeated(l)
 print(element,freq)
+
+#to map two list into dictionary
+from itertools import zip_longest
+def mapping(l1, l2):
+    l3=dict(zip_longest(l1,l2))
+    l4=dict(zip(l1,l2))
+    print(l3)
+    print(l4)
+l1=eval(input("Enter the first element : "))
+l2=eval(input("Enter the second element : "))
+mapping(l1,l2)
